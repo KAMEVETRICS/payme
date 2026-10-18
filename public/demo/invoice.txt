@@ -1,0 +1,15 @@
+PAYME DEMO - SYNTHETIC INVOICE - DO NOT PAY
+
+Supplier: Atlas Packaging (fictional)
+Invoice: DEMO-1042
+Issued: 2026-10-17
+Due: 2026-10-17
+Currency: USD
+Total: 45.00
+Item: Sample packaging materials
+
+This document contains no payment address. It is a public illustrative
+attachment for the read-only judge demo, not a real supplier invoice.
+
+Sample policy: 25 USDC per week, with 12.50 USDC remaining.
+Sample decision: ask the owner because the invoice exceeds the remaining budget.

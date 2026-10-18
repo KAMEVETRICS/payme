@@ -1,0 +1,20 @@
+[Unit]
+Description=Payme web app
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=payme
+WorkingDirectory=/opt/payme/app
+Environment=NODE_ENV=production
+Environment=NEXT_TELEMETRY_DISABLED=1
+ExecStart=/usr/bin/npx next start -H 127.0.0.1 -p 3000
+Restart=always
+RestartSec=5
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/opt/payme/app/data /opt/payme/app/receipts /opt/payme/app/logs /opt/payme/app/.next/cache /opt/payme/.npm
+
+[Install]
+WantedBy=multi-user.target

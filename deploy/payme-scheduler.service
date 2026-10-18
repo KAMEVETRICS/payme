@@ -1,0 +1,19 @@
+[Unit]
+Description=Payme scheduler (email queue, held invoices, retries)
+After=network-online.target payme-web.service
+Wants=network-online.target
+
+[Service]
+User=payme
+WorkingDirectory=/opt/payme/app
+Environment=NODE_ENV=production
+ExecStart=/usr/bin/node --env-file=.env scripts/scheduler.ts --every 60
+Restart=always
+RestartSec=10
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/opt/payme/app/data /opt/payme/app/receipts /opt/payme/app/logs
+
+[Install]
+WantedBy=multi-user.target

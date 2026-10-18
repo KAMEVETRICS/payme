@@ -1,0 +1,11 @@
+tunnel: b65a2d06-98c8-4291-a807-29c6780c63f2
+credentials-file: /etc/cloudflared/payme.json
+
+ingress:
+  # The cron route is for the server's own scheduler only.
+  - hostname: payme.deplace.space
+    path: ^/api/cron(/|$)
+    service: http_status:404
+  - hostname: payme.deplace.space
+    service: http://127.0.0.1:3000
+  - service: http_status:404

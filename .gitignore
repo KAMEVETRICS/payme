@@ -1,0 +1,20 @@
+node_modules/
+artifacts/
+cache/
+types/
+.env
+secrets/
+recovery_file_*.dat
+.next/
+next-env.d.ts
+*.tsbuildinfo
+data/businesses/
+data/uploads/
+data/pending/
+logs/
+data/inbox/
+data/mail/
+data/chat/
+data/invoice-locks/
+# Business data (decisions, answers): stays on the server, never in git
+receipts/

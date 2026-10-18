@@ -1,0 +1,14 @@
+name = "payer-email"
+main = "src/index.js"
+compatibility_date = "2026-10-01"
+# Email only: no public workers.dev URL or preview URLs.
+workers_dev = false
+preview_urls = false
+
+[vars]
+# Payer's raw-email endpoint, through the Cloudflare tunnel.
+WEBHOOK_URL = "https://payme.deplace.space/api/inbound/email"
+
+# Set as secrets, not here:
+#   WEBHOOK_SECRET    npx wrangler secret put WEBHOOK_SECRET   (INBOUND_WEBHOOK_SECRET from Payer's .env)
+#   FALLBACK_ADDRESS  npx wrangler secret put FALLBACK_ADDRESS (a verified Email Routing destination, e.g. the owner's inbox)

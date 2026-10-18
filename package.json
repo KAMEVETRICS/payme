@@ -1,0 +1,41 @@
+{
+  "name": "payer",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Payme: an AI agent that pays a small business's supplier invoices in USDC or EURC on Arc, within rules the owner signs and a contract enforces.",
+  "type": "module",
+  "scripts": {
+    "dev": "hardhat build && next dev",
+    "build": "hardhat build && next build",
+    "start": "next start",
+    "test": "hardhat test solidity && node --test \"test/agent/*.test.ts\"",
+    "test:agent": "node --test \"test/agent/*.test.ts\"",
+    "deploy:testnet": "hardhat build && node --env-file=.env scripts/deploy.ts",
+    "circle:setup": "hardhat build && node --env-file=.env scripts/circle-setup.ts",
+    "agent": "node --env-file=.env scripts/agent.ts",
+    "scheduler": "node --env-file=.env scripts/scheduler.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "forge-std": "github:foundry-rs/forge-std#v1.17.0",
+    "hardhat": "^3.19.0",
+    "typescript": "^7.0.2"
+  },
+  "dependencies": {
+    "@circle-fin/developer-controlled-wallets": "^10.8.1",
+    "@circle-fin/user-controlled-wallets": "^10.8.1",
+    "@circle-fin/w3s-pw-web-sdk": "^1.1.11",
+    "next": "^16.4.2",
+    "postal-mime": "^4.0.7",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "viem": "^2.57.7"
+  },
+  "overrides": {
+    "firebase": "^13.0.0",
+    "@grpc/grpc-js": "^1.14.6",
+    "uuid": "^11.1.1"
+  }
+}
